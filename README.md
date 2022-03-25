@@ -29,6 +29,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`graphcms create [TEMPLATE]`](#graphcms-create-template)
 * [`graphcms help [COMMAND]`](#graphcms-help-command)
 * [`graphcms plugins`](#graphcms-plugins)
 * [`graphcms plugins:install PLUGIN...`](#graphcms-pluginsinstall-plugin)
@@ -39,6 +40,27 @@ USAGE
 * [`graphcms plugins:uninstall PLUGIN...`](#graphcms-pluginsuninstall-plugin-1)
 * [`graphcms plugins:uninstall PLUGIN...`](#graphcms-pluginsuninstall-plugin-2)
 * [`graphcms plugins update`](#graphcms-plugins-update)
+
+## `graphcms create [TEMPLATE]`
+
+Generate GraphCMS project
+
+```
+USAGE
+  $ graphcms create [TEMPLATE]
+
+ARGUMENTS
+  TEMPLATE  which template do you want to use
+
+DESCRIPTION
+  Generate GraphCMS project
+
+EXAMPLES
+      $ graphcms create with-algolia
+      $ graphcms create using-management-sdk
+```
+
+_See code: [dist/commands/create/index.ts](https://github.com/graphcms/graphcms-cli/graphcms-cli/blob/v0.0.0/dist/commands/create/index.ts)_
 
 ## `graphcms help [COMMAND]`
 

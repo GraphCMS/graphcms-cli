@@ -11,7 +11,7 @@ export default class List extends Command {
   public async run(): Promise<void> {
     const examples = await fetchGraphcmsExamples();
 
-    console.log(
+    this.log(
       examples.tree
         .map((template) => template.path)
         .filter((templateName) => templateName.match(/uix|with|using/))

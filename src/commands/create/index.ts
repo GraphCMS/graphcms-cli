@@ -4,25 +4,14 @@ import { Command, Flags } from "@oclif/core";
 import spinner from "ora-promise";
 import * as inquirer from "inquirer";
 import Downloader from "github-download-directory";
-import http from "got";
 import path from "path";
+import { move } from "fs-extra";
 import spawn from "../../utils/spawnPromise";
+import fetchGraphcmsExamples from "../../utils/fetchGraphcmsExamples";
 
 type CliOptions = {
   readonly packageManager: Array<string>;
   readonly projectType: Array<string>;
-};
-
-type ExampleRepo = {
-  sha: string;
-  url: string;
-  tree: Array<{
-    path: string;
-    mode: string;
-    type: string;
-    sha: string;
-    url: string;
-  }>;
 };
 
 const options: CliOptions = {
@@ -35,7 +24,7 @@ const options: CliOptions = {
 };
 
 export default class Create extends Command {
-  static description = "Generate GraphCMS project";
+  static description = "Generate GraphCMS project.";
 
   static examples = [
     `
@@ -60,7 +49,12 @@ export default class Create extends Command {
   static args = [
     {
       name: "template",
-      description: "which template do you want to use",
+      description: "Which template do you want to use?",
+      required: false,
+    },
+    {
+      name: "projectDir",
+      description: "Where do you want to create new project?",
       required: false,
     },
   ];
@@ -68,20 +62,12 @@ export default class Create extends Command {
   async run(): Promise<void> {
     const { args, flags } = await this.parse(Create);
 
-    const data = (await spinner("Fetching Templates", () =>
-      http
-        .get(
-          "https://api.github.com/repos/GraphCMS/graphcms-examples/git/trees/master"
-        )
-        .json()
-    )) as ExampleRepo;
+    const data = await fetchGraphcmsExamples();
 
     const allExamples = data.tree.map((example) => example.path);
 
     const uixExamples = allExamples.filter((file) => file.match(/uix/));
-
     const graphcmsFeatures = allExamples.filter((file) => file.match(/using/));
-
     const frameworkExamples = allExamples.filter((file) => file.match(/with/));
 
     const getChoices = (projectType: string | undefined) => {
@@ -103,7 +89,7 @@ export default class Create extends Command {
     };
 
     let { packageManager, projectType } = flags;
-    let template;
+    let template, projectDir;
 
     if (!packageManager) {
       const responses = await inquirer.prompt([
@@ -145,7 +131,19 @@ export default class Create extends Command {
       template = projectTypeResponses.examples;
     }
 
-    const project = template || args.template;
+    if (!args.projectDir) {
+      const projectDirResponse = await inquirer.prompt([
+        {
+          name: "projectDir",
+          message: "Enter project directory name",
+          type: "input",
+        },
+      ]);
+
+      projectDir = projectDirResponse.projectDir;
+    }
+
+    const project = template ?? args.template;
 
     if (!project) {
       throw new Error("No template defined aborting create");
@@ -155,9 +153,14 @@ export default class Create extends Command {
       Downloader.download("GraphCMS", "graphcms-examples", project)
     );
 
+    const existingProjectPath = path.join(process.cwd(), project);
+    const newProjectPath = path.join(process.cwd(), projectDir);
+
+    await move(existingProjectPath, newProjectPath);
+
     await spinner("Installing Dependencies", () =>
-      spawn(packageManager || "yarn", ["install"], {
-        cwd: path.join(process.cwd(), project),
+      spawn(packageManager ?? "yarn", ["install"], {
+        cwd: newProjectPath,
       })
     );
 

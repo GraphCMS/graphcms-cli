@@ -21,22 +21,31 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`graphcms create [TEMPLATE]`](#graphcms-create-template)
+* [`graphcms create [TEMPLATE] [PROJECTDIR]`](#graphcms-create-template-projectdir)
 * [`graphcms help [COMMAND]`](#graphcms-help-command)
+* [`graphcms list`](#graphcms-list)
 
-## `graphcms create [TEMPLATE]`
+## `graphcms create [TEMPLATE] [PROJECTDIR]`
 
-Generate GraphCMS project
+Generate GraphCMS project.
 
 ```
 USAGE
-  $ graphcms create [TEMPLATE]
+  $ graphcms create [TEMPLATE] [PROJECTDIR] [-p yarn|npm|pnpm] [-t GraphCMS Content API Features &
+    Recipes|UI Extensions|Frameworks & Libraries]
 
 ARGUMENTS
-  TEMPLATE  which template do you want to use
+  TEMPLATE    Which template do you want to use?
+  PROJECTDIR  Where do you want to create new project?
+
+FLAGS
+  -p, --packageManager=<option>  Package manager to use
+                                 <options: yarn|npm|pnpm>
+  -t, --projectType=<option>     Kind of project
+                                 <options: GraphCMS Content API Features & Recipes|UI Extensions|Frameworks & Libraries>
 
 DESCRIPTION
-  Generate GraphCMS project
+  Generate GraphCMS project.
 
 EXAMPLES
       $ graphcms create with-algolia
@@ -63,5 +72,22 @@ DESCRIPTION
   Display help for graphcms.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
+
+## `graphcms list`
+
+List available templates
+
+```
+USAGE
+  $ graphcms list
+
+DESCRIPTION
+  List available templates
+
+EXAMPLES
+  $ graphcms list
+```
+
+_See code: [dist/commands/list/index.ts](https://github.com/graphcms/graphcms-cli/graphcms-cli/blob/v0.0.0/dist/commands/list/index.ts)_
 <!-- commandsstop -->

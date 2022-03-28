@@ -1,28 +1,21 @@
-import { Command, Flags } from "@oclif/core";
+import { Command } from "@oclif/core";
+import fetchGraphcmsExamples from "../../utils/fetchGraphcmsExamples";
 
 export default class List extends Command {
-  static description = "describe the command here";
+  static description = "List available templates";
 
-  static examples = ["<%= config.bin %> <%= command.id %>"];
+  static examples = ["graphcms list"];
 
-  static flags = {
-    // flag with a value (-n, --name=VALUE)
-    name: Flags.string({ char: "n", description: "name to print" }),
-    // flag with no value (-f, --force)
-    force: Flags.boolean({ char: "f" }),
-  };
-
-  static args = [{ name: "file" }];
+  static flags = {};
 
   public async run(): Promise<void> {
-    const { args, flags } = await this.parse(List);
+    const examples = await fetchGraphcmsExamples();
 
-    const name = flags.name ?? "world";
-    this.log(
-      `hello ${name} from /Users/cadu/Projects/graphcms-cli/src/commands/list.ts`
+    console.log(
+      examples.tree
+        .map((template) => template.path)
+        .filter((templateName) => templateName.match(/uix|with|using/))
+        .join("\n")
     );
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`);
-    }
   }
 }

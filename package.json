@@ -19,9 +19,7 @@
   "dependencies": {
     "@ahmadnassri/spawn-promise": "^1.2.0",
     "@oclif/core": "^1",
-    "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.0.1",
-    "@types/inquirer": "^8.2.0",
+    "fs-extra": "^10.0.1",
     "github-download-directory": "^2.0.0",
     "got": "11",
     "ora-promise": "^1.0.0"
@@ -29,7 +27,9 @@
   "devDependencies": {
     "@oclif/test": "^2",
     "@types/chai": "^4",
+    "@types/fs-extra": "^9.0.13",
     "@types/got": "^9.6.12",
+    "@types/inquirer": "^8.2.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.4",
     "@types/tar": "^6.1.1",

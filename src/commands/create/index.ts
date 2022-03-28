@@ -9,6 +9,7 @@ import { move } from "fs-extra";
 import spawn from "../../utils/spawnPromise";
 import fetchGraphcmsExamples from "../../utils/fetchGraphcmsExamples";
 import { KeyvFile } from "keyv-file";
+import { GCMS_GH_TOKEN } from "../../constants";
 
 type CliOptions = {
   readonly packageManager: Array<string>;
@@ -139,6 +140,7 @@ export default class Create extends Command {
           name: "projectDir",
           message: "Enter project directory name",
           type: "input",
+          default: template,
         },
       ]);
 
@@ -155,7 +157,7 @@ export default class Create extends Command {
 
     const authTokenDownloader = new Downloader({
       cache: { store },
-      github: { auth: "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" },
+      github: { auth: GCMS_GH_TOKEN },
     });
 
     await spinner("Downloading template", () =>

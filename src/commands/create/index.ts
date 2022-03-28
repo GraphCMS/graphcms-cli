@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="../../global.d.ts"/>
+/// <reference path="../../types.d.ts"/>
 import { Command, Flags } from "@oclif/core";
 import spinner from "ora-promise";
 import * as inquirer from "inquirer";

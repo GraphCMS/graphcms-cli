@@ -2,18 +2,6 @@
 # yarn lockfile v1
 
 
-"@ahmadnassri/error@^1.1.0":
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/@ahmadnassri/error/-/error-1.1.2.tgz#5721787600798fb308b0bcf3040c9cbd5181ea0c"
-  integrity sha512-f2/9P07U3wsOyCR3/qNskIVTwZC0B/O9Xmjf/3Jqwexp2VQ5MsekiN/n6R7/SiQ+7adM9Z4hDc0j9oBI0+l48Q==
-
-"@ahmadnassri/spawn-promise@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@ahmadnassri/spawn-promise/-/spawn-promise-1.2.0.tgz#9a706c2995eca185b871b3a817a26e79309f4795"
-  integrity sha512-QvFuwrlKLGyMuQj7ohCLXtrVrDAQ7FyWjDX9f3WxpD3pGPGFzCafG/ZGIVWB6wNLwerZo+E5GplgQBqoYnC61g==
-  dependencies:
-    "@ahmadnassri/error" "^1.1.0"
-
 "@babel/code-frame@^7.0.0":
   version "7.16.0"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.16.0.tgz"

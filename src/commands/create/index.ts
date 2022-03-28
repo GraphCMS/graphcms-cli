@@ -167,7 +167,9 @@ export default class Create extends Command {
     const existingProjectPath = path.join(process.cwd(), project);
     const newProjectPath = path.join(process.cwd(), projectDir);
 
-    await move(existingProjectPath, newProjectPath);
+    if (existingProjectPath !== newProjectPath) {
+      await move(existingProjectPath, newProjectPath);
+    }
 
     await spinner("Installing Dependencies", () =>
       spawn(packageManager ?? "yarn", ["install"], {

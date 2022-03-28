@@ -4,7 +4,8 @@
   "description": "GraphCMS CLI",
   "author": "Rajat Sharma @rajatsharma",
   "bin": {
-    "graphcms": "./bin/run"
+    "graphcms": "./bin/run",
+    "gcms": "./bin/run"
   },
   "homepage": "https://github.com/https://github.com/graphcms/graphcms-cli/graphcms-cli",
   "license": "MIT",

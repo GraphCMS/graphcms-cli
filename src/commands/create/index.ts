@@ -3,11 +3,12 @@
 import { Command, Flags } from "@oclif/core";
 import spinner from "ora-promise";
 import * as inquirer from "inquirer";
-import Downloader from "github-download-directory";
+import { Downloader } from "github-download-directory";
 import path from "path";
 import { move } from "fs-extra";
 import spawn from "../../utils/spawnPromise";
 import fetchGraphcmsExamples from "../../utils/fetchGraphcmsExamples";
+import { KeyvFile } from "keyv-file";
 
 type CliOptions = {
   readonly packageManager: Array<string>;
@@ -89,7 +90,8 @@ export default class Create extends Command {
     };
 
     let { packageManager, projectType } = flags;
-    let template, projectDir;
+    let template;
+    let projectDir = args.projectDir;
 
     if (!packageManager) {
       const responses = await inquirer.prompt([
@@ -131,7 +133,7 @@ export default class Create extends Command {
       template = projectTypeResponses.examples;
     }
 
-    if (!args.projectDir) {
+    if (!projectDir) {
       const projectDirResponse = await inquirer.prompt([
         {
           name: "projectDir",
@@ -149,8 +151,15 @@ export default class Create extends Command {
       throw new Error("No template defined aborting create");
     }
 
+    const store = new KeyvFile();
+
+    const authTokenDownloader = new Downloader({
+      cache: { store },
+      github: { auth: "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" },
+    });
+
     await spinner("Downloading template", () =>
-      Downloader.download("GraphCMS", "graphcms-examples", project)
+      authTokenDownloader.download("GraphCMS", "graphcms-examples", project)
     );
 
     const existingProjectPath = path.join(process.cwd(), project);

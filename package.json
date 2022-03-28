@@ -17,12 +17,14 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
+    "@ahmadnassri/spawn-promise": "^1.2.0",
     "@oclif/core": "^1",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.0.1",
     "@types/inquirer": "^8.2.0",
     "github-download-directory": "^2.0.0",
-    "got": "^12.0.2"
+    "got": "11",
+    "ora-promise": "^1.0.0"
   },
   "devDependencies": {
     "@oclif/test": "^2",

@@ -5,8 +5,8 @@ import spinner from "ora-promise";
 import * as inquirer from "inquirer";
 import Downloader from "github-download-directory";
 import http from "got";
-import spawn from "../../utils/spawnPromise";
 import path from "path";
+import spawn from "../../utils/spawnPromise";
 
 type CliOptions = {
   readonly packageManager: Array<string>;

@@ -1,16 +1,20 @@
 {
-  "name": "graphcms-cli",
-  "version": "0.0.0",
+  "name": "@graphcms/cli",
+  "private": "false",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
   "description": "GraphCMS CLI",
   "author": "Rajat Sharma @rajatsharma",
   "bin": {
     "graphcms": "./bin/run",
     "gcms": "./bin/run"
   },
-  "homepage": "https://github.com/https://github.com/graphcms/graphcms-cli/graphcms-cli",
+  "homepage": "https://github.com/graphcms/graphcms-cli",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "https://github.com/graphcms/graphcms-cli/graphcms-cli",
+  "repository": "https://github.com/graphcms/graphcms-cli",
   "files": [
     "/bin",
     "/dist",
@@ -76,7 +80,7 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "bugs": "https://github.com/https://github.com/graphcms/graphcms-cli/graphcms-cli/issues",
+  "bugs": "https://github.com/graphcms/graphcms-cli/issues",
   "keywords": [
     "oclif"
   ],

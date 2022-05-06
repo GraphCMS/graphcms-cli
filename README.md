@@ -52,8 +52,6 @@ EXAMPLES
       $ graphcms create using-management-sdk
 ```
 
-_See code: [dist/commands/create/index.ts](https://github.com/graphcms/graphcms-cli/graphcms-cli/blob/v0.0.0/dist/commands/create/index.ts)_
-
 ## `graphcms help [COMMAND]`
 
 Display help for graphcms.
@@ -72,8 +70,6 @@ DESCRIPTION
   Display help for graphcms.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
-
 ## `graphcms list`
 
 List available templates
@@ -89,5 +85,4 @@ EXAMPLES
   $ graphcms list
 ```
 
-_See code: [dist/commands/list/index.ts](https://github.com/graphcms/graphcms-cli/graphcms-cli/blob/v0.0.0/dist/commands/list/index.ts)_
 <!-- commandsstop -->

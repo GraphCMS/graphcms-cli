@@ -86,3 +86,7 @@ EXAMPLES
 ```
 
 <!-- commandsstop -->
+
+---
+
+Made with 💜 by GraphCMS 👋 [join our community](https://slack.graphcms.com/)!

@@ -12,7 +12,7 @@ $ npm install -g @graphcms/cli
 $ graphcms COMMAND
 running command...
 $ graphcms (--version)
-@graphcms/cli/0.0.1 darwin-arm64 node-v16.13.2
+@graphcms/cli/0.0.3 darwin-arm64 node-v16.13.2
 $ graphcms --help [COMMAND]
 USAGE
   $ graphcms COMMAND

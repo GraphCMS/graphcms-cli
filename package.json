@@ -1,6 +1,5 @@
 {
   "name": "@graphcms/cli",
-  "private": "false",
   "publishConfig": {
     "access": "public"
   },

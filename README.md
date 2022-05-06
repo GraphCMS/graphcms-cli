@@ -8,11 +8,11 @@ GraphCMS CLI
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g graphcms-cli
+$ npm install -g @graphcms/cli
 $ graphcms COMMAND
 running command...
 $ graphcms (--version)
-graphcms-cli/0.0.0 darwin-arm64 node-v16.13.2
+@graphcms/cli/0.0.1 darwin-arm64 node-v16.13.2
 $ graphcms --help [COMMAND]
 USAGE
   $ graphcms COMMAND
@@ -72,19 +72,18 @@ DESCRIPTION
 
 ## `graphcms list`
 
-List available templates
+List available templates.
 
 ```
 USAGE
   $ graphcms list
 
 DESCRIPTION
-  List available templates
+  List available templates.
 
 EXAMPLES
   $ graphcms list
 ```
-
 <!-- commandsstop -->
 
 ---

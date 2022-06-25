@@ -1,5 +1,5 @@
 import { Command } from "@oclif/core";
-import fetchGraphcmsExamples from "../../utils/fetchGraphcmsExamples";
+import fetchGraphcmsExamples from "../utils/fetchGraphcmsExamples";
 
 export default class List extends Command {
   static description = "List available templates.";

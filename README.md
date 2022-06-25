@@ -11,8 +11,8 @@ GraphCMS CLI
 $ npm install -g @graphcms/cli
 $ graphcms COMMAND
 running command...
-$ graphcms (--version)
-@graphcms/cli/0.0.3 darwin-arm64 node-v16.13.2
+$ graphcms (--version|-v)
+@graphcms/cli/0.0.11 darwin-arm64 node-v16.13.2
 $ graphcms --help [COMMAND]
 USAGE
   $ graphcms COMMAND
@@ -24,6 +24,7 @@ USAGE
 * [`graphcms create [TEMPLATE] [PROJECTDIR]`](#graphcms-create-template-projectdir)
 * [`graphcms help [COMMAND]`](#graphcms-help-command)
 * [`graphcms list`](#graphcms-list)
+* [`graphcms version`](#graphcms-version)
 
 ## `graphcms create [TEMPLATE] [PROJECTDIR]`
 
@@ -52,6 +53,8 @@ EXAMPLES
       $ graphcms create using-management-sdk
 ```
 
+_See code: [dist/commands/create.ts](https://github.com/graphcms/graphcms-cli/blob/v0.0.11/dist/commands/create.ts)_
+
 ## `graphcms help [COMMAND]`
 
 Display help for graphcms.
@@ -70,6 +73,8 @@ DESCRIPTION
   Display help for graphcms.
 ```
 
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
+
 ## `graphcms list`
 
 List available templates.
@@ -84,6 +89,17 @@ DESCRIPTION
 EXAMPLES
   $ graphcms list
 ```
+
+_See code: [dist/commands/list.ts](https://github.com/graphcms/graphcms-cli/blob/v0.0.11/dist/commands/list.ts)_
+
+## `graphcms version`
+
+```
+USAGE
+  $ graphcms version
+```
+
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.4/src/commands/version.ts)_
 <!-- commandsstop -->
 
 ---

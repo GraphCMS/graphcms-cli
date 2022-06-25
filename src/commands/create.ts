@@ -1,15 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="../../types.d.ts"/>
+/// <reference path="../types.d.ts"/>
 import { Command, Flags } from "@oclif/core";
 import spinner from "ora-promise";
 import * as inquirer from "inquirer";
 import { Downloader } from "github-download-directory";
 import path from "path";
 import { move } from "fs-extra";
-import spawn from "../../utils/spawnPromise";
-import fetchGraphcmsExamples from "../../utils/fetchGraphcmsExamples";
+import spawn from "../utils/spawnPromise";
+import fetchGraphcmsExamples from "../utils/fetchGraphcmsExamples";
 import { KeyvFile } from "keyv-file";
-import { GCMS_GH_TOKEN } from "../../constants";
+import { GCMS_GH_TOKEN } from "../constants";
 
 type CliOptions = {
   readonly packageManager: Array<string>;

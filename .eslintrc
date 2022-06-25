@@ -11,8 +11,22 @@
     "prettier"
   ],
   "plugins": ["prettier", "@typescript-eslint", "import"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "index",
+          "sibling",
+          "parent"
+        ]
+      }
+    ]
+  },
   "env": {
-    "es6": true,
     "node": true
   }
 }

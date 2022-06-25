@@ -1,21 +1,12 @@
-import { Command } from "@oclif/core";
 import fetchGraphcmsExamples from "../utils/fetchGraphcmsExamples";
 
-export default class List extends Command {
-  static description = "List available templates.";
+export default async function list() {
+  const examples = await fetchGraphcmsExamples();
 
-  static examples = ["graphcms list"];
-
-  static flags = {};
-
-  public async run(): Promise<void> {
-    const examples = await fetchGraphcmsExamples();
-
-    this.log(
-      examples.tree
-        .map((template) => template.path)
-        .filter((templateName) => templateName.match(/uix|with|using/))
-        .join("\n")
-    );
-  }
+  console.log(
+    examples.tree
+      .map((template) => template.path)
+      .filter((templateName) => templateName.match(/uix|with|using/))
+      .join("\n")
+  );
 }

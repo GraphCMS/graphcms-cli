@@ -8,7 +8,6 @@ import { KeyvFile } from "keyv-file";
 import * as path from "path";
 import spawn from "../utils/spawnPromise";
 import fetchGraphcmsExamples from "../utils/fetchGraphcmsExamples";
-import { GCMS_GH_TOKEN } from "../constants";
 
 type CliOptions = {
   readonly packageManager: Array<string>;
@@ -124,7 +123,7 @@ export default async function create(
 
   const authTokenDownloader = new Downloader({
     cache: { store },
-    github: { auth: GCMS_GH_TOKEN },
+    github: { auth: "GCMS_GH_TOKEN" },
   });
 
   await spinner("Downloading template", () =>

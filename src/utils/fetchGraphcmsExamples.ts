@@ -1,6 +1,5 @@
 import spinner from "ora-promise";
 import http from "got";
-import { GCMS_GH_TOKEN } from "../constants";
 
 type ExampleRepo = {
   sha: string;
@@ -21,7 +20,7 @@ export default () =>
         "https://api.github.com/repos/GraphCMS/graphcms-examples/git/trees/master",
         {
           headers: {
-            Authorization: `token ${GCMS_GH_TOKEN}`,
+            Authorization: `token GCMS_GH_TOKEN`,
           },
         }
       )

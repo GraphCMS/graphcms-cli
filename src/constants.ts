@@ -1,1 +1,1 @@
-export const GCMS_GH_TOKEN = "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";
+export const GCMS_GH_TOKEN = "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";

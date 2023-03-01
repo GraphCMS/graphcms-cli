@@ -33,7 +33,7 @@
     "@types/chai": "^4",
     "@types/fs-extra": "^9.0.13",
     "@types/got": "^9.6.12",
-    "@types/inquirer": "^8.2.0",
+    "@types/inquirer": "^8.2.6",
     "@types/mocha": "^9.1.0",
     "@types/node": "^16.9.4",
     "@types/tar": "^6.1.1",
